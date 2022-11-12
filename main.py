@@ -102,14 +102,12 @@ def check(game_id: conint(gt=0), db: Session = Depends(get_db)):
     if game is None:
         raise HTTPException(detail=f"game - {game_id} not found", status_code=400)
     info = game.info
-    print(game.info)
     return check_current_condition(info)
 
 
 @app.get('/history', response_model=List[GameOutput])
 def history(db: Session = Depends(get_db)):
     games = db.query(Game).all()
-    print(games)
     return games
 
 

@@ -10,6 +10,6 @@ class Game(Base):
     id = Column(Integer, primary_key=True, index=True)
     last_move_was_x = Column(Boolean, default=False)
     info = Column(MutableDict.as_mutable(JSON))
-    #is_finished = Column(Boolean, default=False)
+
 
 
