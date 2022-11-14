@@ -37,7 +37,7 @@ def check_current_condition(info: dict):
         for subList in value:
             first = info.get(str(subList[0]))
             if first == "":
-                break;
+                continue;
             isSame = True
             for index in subList:
                 if info.get(str(index)) != first:
